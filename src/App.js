@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import Home from './pages/Home'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import {Route, Link, Switch} from "react-router-dom"
+import Calculator from './pages/Calculator'
+
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className = "App">
+      <Route exact path = "/" render = {(rp) => <Home {...rp}/>}/>
+      <Switch>
+        <Route path = "/plastic-calculator" render = {(rp) => <Calculator {...rp}/>}/>
+      </Switch>
     </div>
   );
 }
