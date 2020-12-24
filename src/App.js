@@ -6,6 +6,7 @@ import {Route, Link, Switch} from "react-router-dom"
 import Calculator from './pages/Calculator'
 import Signup from './pages/signup'
 import Login from './pages/login'
+import MyInfo from './pages/MyInfo'
 
 export const GlobalCtx = React.createContext(null)
 
@@ -28,7 +29,7 @@ function App() {
   return (
     <GlobalCtx.Provider value={{gState, setGState}}>
       <div className = "App">
-        <Route exact path = "/" render = {(rp) => <Home {...rp}/>}/>
+        <Route exact path = "/" render = {(rp) => gState.token ? <MyInfo {...rp}/> : <Home {...rp}/> }/>
         <main>
           <Switch>
             <Route path = "/plastic-calculator" render = {(rp) => <Calculator {...rp}/>}/>

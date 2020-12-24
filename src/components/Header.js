@@ -7,6 +7,25 @@ import NavDropdown from 'react-bootstrap/Navdropdown'
 import Nav from 'react-bootstrap/Nav'
 
 const Header = (props) => {
+    const {gState, setGState} = React.useContext(GlobalCtx)
+
+    const logout = (
+        <Nav.Link>
+            <h2 onClick = {() => {
+                window.localStorage.removeItem("token")
+                setGState({...gState, token: null})
+            }}>Logout</h2>
+        </Nav.Link>
+    )
+
+    const login_signup = (
+        <>
+            <Nav.Link href="/signup">SignUp</Nav.Link>
+            <Nav.Link eventKey={2} href="/login">
+                            Login
+                        </Nav.Link>
+        </>
+    )
 
     return (
         <>
@@ -25,10 +44,7 @@ const Header = (props) => {
                     <Nav.Link href="/my_info">My Info</Nav.Link>
                     </Nav>
                     <Nav>
-                    <Nav.Link href="/signup">SignUp</Nav.Link>
-                    <Nav.Link eventKey={2} href="/login">
-                        Login
-                    </Nav.Link>
+                    {gState.token ? logout : login_signup}
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
