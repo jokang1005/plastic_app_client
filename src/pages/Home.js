@@ -1,8 +1,10 @@
 import React from 'react'
+import {GlobalCtx} from "../App"
 import Header from '../components/Header'
 import Card from 'react-bootstrap/Card'
 import CardDeck from 'react-bootstrap/CardDeck'
 import Container from 'react-bootstrap/Container'
+import {Link} from "react-router-dom"
 
 
 
@@ -52,6 +54,7 @@ const Home = (props) => {
             </CardDeck>
             <br/>
             <Container>
+                <Link to="/plastic-calculator">
                 <Card className="bg-dark text-white">
                     <Card.Img src="https://images.unsplash.com/photo-1537084642907-629340c7e59c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1567&q=80" alt="Card image" />
                     <Card.ImgOverlay>
@@ -63,6 +66,7 @@ const Home = (props) => {
                         <Card.Text>Last updated 3 mins ago</Card.Text>
                     </Card.ImgOverlay>
                 </Card>
+                </Link>
             </Container>
             <br/>
             <Card>

@@ -7,6 +7,8 @@ import Button from 'react-bootstrap/Button'
 
 const Calculator = (props) => {
 
+    
+
     return (
         <>
             <Header/>

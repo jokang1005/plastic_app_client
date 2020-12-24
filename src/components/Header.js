@@ -1,4 +1,5 @@
 import React from 'react'
+import {GlobalCtx} from "../App"
 import Container from 'react-bootstrap/Container'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Navbar from 'react-bootstrap/Navbar'
@@ -24,7 +25,7 @@ const Header = (props) => {
                     <Nav.Link href="/my_info">My Info</Nav.Link>
                     </Nav>
                     <Nav>
-                    <Nav.Link href="/signin">SignIn</Nav.Link>
+                    <Nav.Link href="/signup">SignUp</Nav.Link>
                     <Nav.Link eventKey={2} href="/login">
                         Login
                     </Nav.Link>
