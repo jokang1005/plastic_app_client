@@ -1,4 +1,5 @@
 import React from 'react'
+import {GlobalCtx} from '../App'
 import Header from '../components/Header'
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
@@ -6,7 +7,12 @@ import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 
 const Calculator = (props) => {
+    const {gState, setGState} = React.useContext(GlobalCtx)
+    const {url, token} = gState
 
+    // const getPlastic = async () => {
+    //     const response
+    // }
     
 
     return (
@@ -17,21 +23,22 @@ const Calculator = (props) => {
                 <Container>
                 <Form.Row className="justify-content-md-center">
                     <Col md = {4}>
-                        <Form.Label className="plastic-bags" htmlFor="inlineFormCustomSelectPref">
+                        <Form.Label 
+                            className="plastic-bags" htmlFor="inlineFormCustomSelectPref">
             Plastic Bags
-                            </Form.Label>
-                            <Form.Control
-                                as="select"
-                                className="plastic-bags"
-                                id="inlineFormCustomSelectPref"
-                                custom
-                            >
-                                <option value="0">Choose...</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="3">4</option>
-                                <option value="3">5</option>
+                        </Form.Label>
+                        <Form.Control
+                            as="select"
+                            className="plastic-bags"
+                            id="inlineFormCustomSelectPref"
+                            custom
+                        >
+                            <option value="0">Choose...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="3">4</option>
+                            <option value="3">5</option>
                         </Form.Control>
                     </Col>
                 </Form.Row>

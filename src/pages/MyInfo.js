@@ -2,6 +2,7 @@ import React from 'react'
 import {GlobalCtx} from "../App"
 import Header from '../components/Header'
 import Card from 'react-bootstrap/Card'
+import Table from 'react-bootstrap/Table'
 import CardDeck from 'react-bootstrap/CardDeck'
 import Container from 'react-bootstrap/Container'
 import {Link} from "react-router-dom"
@@ -9,12 +10,115 @@ import {Link} from "react-router-dom"
 
 
 const MyInfo = (props) => {
+    const {gState, setGState} = React.useContext(GlobalCtx)
+    const {url, token} = gState
+    const [plastics, setPlastics] = React.useState(null)
+
+    const getPlastic = async () => {
+        const response = await fetch(url + "/plastics", {
+            method: "get",
+            headers: {
+                Authorization: "bearer " + token
+            }
+        })
+        const json = await response.json()
+        setPlastics(json)
+    }
+
+    React.useEffect(()=>{
+        getPlastic()
+    }, [])
+
 
     return (
         <div className="App">
             <Header/>
             <h1><a href="https://www.nationalgeographic.com/environment/2020/10/us-plastic-pollution/">Did you know U.S. generates more plastic trash than any other nation?</a></h1>
-            <h1>MY INFO PAGE... PUT A GRAPH IF YOU GOTS TIMES</h1>
+            <h1>MY INFO PAGE...GET INFO FROM API and PUT INTO TABLE. PUT A GRAPH IF YOU GOTS TIMES</h1>
+            <h1>My Plastic Usage</h1>
+            <Table striped bordered hover size="sm">
+                <thead>
+                    <tr>
+                    <th>Timestamp</th>
+                    <th>Plastic Bags</th>
+                    <th>Coffee Cups</th>
+                    <th>Plastic Straws</th>
+                    <th>6-Pack Plastic Rings</th>
+                    <th>Plastic Water Bottles</th>
+                    <th>Coffee Pods</th>
+                    <th>Plastic Cups</th>
+                    <th>Disposable Diapers</th>
+                    <th>Plastic Toothbrush</th>
+                    <th>Decomposing Time</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                    <td>
+                        {plastics ? plastics.map((plastic) => (
+                                <div className="plastic">{plastic.created_at}</div> 
+                            )) : null
+                        }
+                    </td>
+                    <td>
+                        {plastics ? plastics.map((plastic) => (
+                            <div className="plastic">{plastic.plastic_bags}</div> 
+                        )) : null
+                    }
+                    </td>
+                    <td>
+                        {plastics ? plastics.map((plastic) => (
+                                <div className="plastic">{plastic.coffee_cup}</div> 
+                            )) : null
+                        }
+                    </td>
+                    <td>
+                        {plastics ? plastics.map((plastic) => (
+                                <div className="plastic">{plastic.plastic_straw}</div> 
+                            )) : null}
+                    </td>
+                    <td>
+                        {plastics ? plastics.map((plastic) => (
+                                <div className="plastic">{plastic.six_pack_plastic_rings}</div> 
+                            )) : null}
+                    </td>
+                    <td>
+                        {plastics ? plastics.map((plastic) => (
+                                <div className="plastic">{plastic.plastic_water_bottle}</div> 
+                            )) : null}
+                    </td>
+                    <td>
+                        {plastics ? plastics.map((plastic) => (
+                                <div className="plastic">{plastic.coffee_pod}</div> 
+                            )) : null}
+                    </td>
+                    <td>
+                        {plastics ? plastics.map((plastic) => (
+                                <div className="plastic">{plastic.plastic_cup}</div> 
+                            )) : null}
+                    </td>
+                    <td>
+                        {plastics ? plastics.map((plastic) => (
+                                <div className="plastic">{plastic.disposable_diaper}</div> 
+                            )) : null}
+                    </td>
+                    <td>
+                        {plastics ? plastics.map((plastic) => (
+                                <div className="plastic">{plastic.plastic_toothbrush}</div> 
+                            )) : null}
+                    </td>
+                    <td>
+                        {plastics ? plastics.map((plastic) => (
+                                <div className="plastic">
+                                    {(plastic.plastic_bags * 20) + (plastic.coffee_cup * 30) + (plastic.plastic_straw * 200) + (plastic.six_pack_plastic_rings * 400) + (plastic.plastic_water_bottle * 450) + (plastic.coffee_pod * 500) + (plastic.plastic_cup * 450) + (plastic.disposable_diaper * 500) + (plastic.plastic_toothbrush * 500) + ` years`}
+                                </div> 
+                            )) : null}
+                    </td>
+                    </tr>
+                </tbody>
+            </Table>
+
             <CardDeck>
                 <Card>
                     <Card.Img variant="top" src="https://images.unsplash.com/photo-1563245160-225a9e276fd6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8cGxhc3RpYyUyMHBvbGx1dGlvbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
