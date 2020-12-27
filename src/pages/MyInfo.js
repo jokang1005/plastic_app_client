@@ -2,6 +2,7 @@ import React from 'react'
 import {GlobalCtx} from "../App"
 import Header from '../components/Header'
 import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 import Table from 'react-bootstrap/Table'
 import CardDeck from 'react-bootstrap/CardDeck'
 import Container from 'react-bootstrap/Container'
@@ -29,6 +30,23 @@ const MyInfo = (props) => {
         getPlastic()
     }, [])
 
+    const handleDelete = (id) => {
+        fetch(`${url}/plastics/${id}`, {
+            method: "delete",
+            headers: {
+                "Authorization": "bearer " + token
+            },
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            getPlastic()
+            console.log("Deed is done");
+
+        })
+        .catch(error => {
+            console.log("SOMETHING HAPPENED BOOOOO")
+        })
+    }
 
     return (
         <div className="App">
@@ -54,68 +72,26 @@ const MyInfo = (props) => {
                 </thead>
 
                 <tbody>
-                    <tr>
-                    <td>
-                        {plastics ? plastics.map((plastic) => (
-                                <div className="plastic">{plastic.created_at}</div> 
+                    {plastics ? plastics.map((plastic) => (
+                        <tr>
+                            <td>
+                                <Link to={`/edit/${plastic.id}`}>{plastic.created_at}</Link>
+                                <br/>
+                                <Button onClick={() =>handleDelete(plastic.id)} variant="outline-danger">Delete</Button>
+                            </td>
+                            <td>{plastic.plastic_bags}</td>
+                            <td>{plastic.coffee_cup}</td>
+                            <td>{plastic.plastic_straw}</td>
+                            <td>{plastic.six_pack_plastic_rings}</td>
+                            <td>{plastic.plastic_water_bottle}</td>
+                            <td>{plastic.coffee_pod}</td>
+                            <td>{plastic.plastic_cup}</td>
+                            <td>{plastic.disposable_diaper}</td>
+                            <td>{plastic.plastic_toothbrush}</td>
+                            <td>{(plastic.plastic_bags * 20) + (plastic.coffee_cup * 30) + (plastic.plastic_straw * 200) + (plastic.six_pack_plastic_rings * 400) + (plastic.plastic_water_bottle * 450) + (plastic.coffee_pod * 500) + (plastic.plastic_cup * 450) + (plastic.disposable_diaper * 500) + (plastic.plastic_toothbrush * 500) + ` years`}</td>
+                        </tr>
                             )) : null
                         }
-                    </td>
-                    <td>
-                        {plastics ? plastics.map((plastic) => (
-                            <div className="plastic">{plastic.plastic_bags}</div> 
-                        )) : null
-                    }
-                    </td>
-                    <td>
-                        {plastics ? plastics.map((plastic) => (
-                                <div className="plastic">{plastic.coffee_cup}</div> 
-                            )) : null
-                        }
-                    </td>
-                    <td>
-                        {plastics ? plastics.map((plastic) => (
-                                <div className="plastic">{plastic.plastic_straw}</div> 
-                            )) : null}
-                    </td>
-                    <td>
-                        {plastics ? plastics.map((plastic) => (
-                                <div className="plastic">{plastic.six_pack_plastic_rings}</div> 
-                            )) : null}
-                    </td>
-                    <td>
-                        {plastics ? plastics.map((plastic) => (
-                                <div className="plastic">{plastic.plastic_water_bottle}</div> 
-                            )) : null}
-                    </td>
-                    <td>
-                        {plastics ? plastics.map((plastic) => (
-                                <div className="plastic">{plastic.coffee_pod}</div> 
-                            )) : null}
-                    </td>
-                    <td>
-                        {plastics ? plastics.map((plastic) => (
-                                <div className="plastic">{plastic.plastic_cup}</div> 
-                            )) : null}
-                    </td>
-                    <td>
-                        {plastics ? plastics.map((plastic) => (
-                                <div className="plastic">{plastic.disposable_diaper}</div> 
-                            )) : null}
-                    </td>
-                    <td>
-                        {plastics ? plastics.map((plastic) => (
-                                <div className="plastic">{plastic.plastic_toothbrush}</div> 
-                            )) : null}
-                    </td>
-                    <td>
-                        {plastics ? plastics.map((plastic) => (
-                                <div className="plastic">
-                                    {(plastic.plastic_bags * 20) + (plastic.coffee_cup * 30) + (plastic.plastic_straw * 200) + (plastic.six_pack_plastic_rings * 400) + (plastic.plastic_water_bottle * 450) + (plastic.coffee_pod * 500) + (plastic.plastic_cup * 450) + (plastic.disposable_diaper * 500) + (plastic.plastic_toothbrush * 500) + ` years`}
-                                </div> 
-                            )) : null}
-                    </td>
-                    </tr>
                 </tbody>
             </Table>
 
