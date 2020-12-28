@@ -75,8 +75,11 @@ const MyInfo = (props) => {
                     {plastics ? plastics.map((plastic) => (
                         <tr>
                             <td>
-                                <Link to={`/edit/${plastic.id}`}>{plastic.created_at}</Link>
+                                <Link to={`/${plastic.id}`}>{plastic.created_at}</Link>
                                 <br/>
+                                <Link to={`/edit/${plastic.id}`}>
+                                    <Button variant="outline-info">Edit</Button>
+                                </Link>
                                 <Button onClick={() =>handleDelete(plastic.id)} variant="outline-danger">Delete</Button>
                             </td>
                             <td>{plastic.plastic_bags}</td>

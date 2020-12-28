@@ -8,6 +8,7 @@ import Signup from './pages/signup'
 import Login from './pages/login'
 import MyInfo from './pages/MyInfo'
 import Edit from './pages/edit';
+import Show from './pages/show'
 
 export const GlobalCtx = React.createContext(null)
 
@@ -37,6 +38,7 @@ function App() {
             <Route path = "/signup" render = {(rp) => <Signup {...rp}/>}/>
             <Route path = "/login" render = {(rp) => <Login {...rp}  />}/>
             <Route path = {`/edit/:id`} render = {(rp) => <Edit {...rp}  />}/>
+            <Route path = {`/:id`} render = {(rp) => <Show {...rp}  />}/>
           </Switch>
         </main>
       </div>
