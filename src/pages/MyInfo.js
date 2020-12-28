@@ -44,6 +44,7 @@ const MyInfo = (props) => {
 
         })
         .catch(error => {
+            getPlastic()
             console.log("SOMETHING HAPPENED BOOOOO")
         })
     }
