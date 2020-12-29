@@ -80,7 +80,7 @@ const Carder = (props) => {
                     <Card.Footer className="text-muted">2 days ago</Card.Footer>
                 </Card>
             </div>
-    
+            <div className="parallax3-1"></div>
             <div className="parallax4"></div>
 
 

@@ -26,10 +26,6 @@ class MeasureModal extends Component {
     };
     M.Modal.init(this.Modal, options);
 
-    // let instance = M.Modal.getInstance(this.Modal);
-    // instance.open();
-    // instance.close();
-    // instance.destroy();
   }
 
   render() {
@@ -49,10 +45,6 @@ class MeasureModal extends Component {
           id="modal2"
           className="modal"
         >
-          {/* If you want Bottom Sheet Modal then add 
-                        bottom-sheet class to the "modal" div
-                        If you want Fixed Footer Modal then add
-                        modal-fixed-footer to the "modal" div*/}
           <div className="modal-content">
             <h4>How is Wildlife affected by plastic pollution?</h4>
             <div className="pics">

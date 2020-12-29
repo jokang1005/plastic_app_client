@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 
 const Calculator = (props) => {
+    
     const {gState, setGState} = React.useContext(GlobalCtx)
     const {url, token} = gState
 
@@ -49,7 +50,7 @@ const Calculator = (props) => {
             props.history.push("/")
         })
     }
-
+//There has to be a way we can make this more DRY
     return (
         <>
             <Header/>

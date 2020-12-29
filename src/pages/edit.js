@@ -52,7 +52,7 @@ const Edit = (props) => {
             props.history.push("/")
         })
     }
-
+//Again, more DRY
     return (
         <>
             <Header/>

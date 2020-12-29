@@ -20,6 +20,7 @@ function App() {
     token: null
   })
 
+
   React.useEffect(() => {
     const token = JSON.parse(window.localStorage.getItem("token"))
     console.log(token)

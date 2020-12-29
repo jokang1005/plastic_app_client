@@ -14,8 +14,9 @@ const Home = (props) => {
     return (
         <div className="App">
             <Header/>
+            <main className="main">
             <Carder />
-
+            </main>
             
         </div>
     )
