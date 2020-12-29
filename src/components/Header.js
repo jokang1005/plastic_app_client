@@ -29,17 +29,17 @@ const Header = (props) => {
 
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar className="nav" sticky="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Navbar.Brand href="/">HOME</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
                     <NavDropdown title="Explore" id="collasible-nav-dropdown">
-                        <NavDropdown.Item href="/plastic_in">Where is Plastic?</NavDropdown.Item>
-                        <NavDropdown.Item href="/how_long">How Long Does it Take for Plastic to Decompose?</NavDropdown.Item>
-                        <NavDropdown.Item href="wildlife_articles">How Plastic Affects Wildlife</NavDropdown.Item>
+                        <NavDropdown.Item href="#where">Where is Plastic?</NavDropdown.Item>
+                        <NavDropdown.Item href="#where">How Long Does it Take for Plastic to Decompose?</NavDropdown.Item>
+                        <NavDropdown.Item href="#where">How Plastic Affects Wildlife</NavDropdown.Item>
                         {/* <NavDropdown.Divider /> */}
-                        <NavDropdown.Item href="/what_can_we_do">What Can We Do</NavDropdown.Item>
+                        <NavDropdown.Item href="#now">What Can We Do</NavDropdown.Item>
                     </NavDropdown>
                     <Nav.Link href="/my_info">My Info</Nav.Link>
                     </Nav>
@@ -48,15 +48,11 @@ const Header = (props) => {
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-            <Jumbotron fluid className='jumbotron'>
-                <Container>
-                <h1>Plastic</h1>
-                <p>
-                    This is a modified jumbotron that occupies the entire horizontal space of
-                    its parent.
-                </p>
-                </Container>
-            </Jumbotron>
+            <Container className="title">
+                <h1>Plastic Counter</h1>
+
+            </Container>
+            <h3><a href="https://www.nationalgeographic.com/environment/2020/10/us-plastic-pollution/">Did you know U.S. generates more plastic trash than any other nation?</a></h3>
       </>
     )
 }

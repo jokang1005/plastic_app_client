@@ -59,7 +59,7 @@ const Calculator = (props) => {
                 <Form.Row className="justify-content-md-center">
                     <Col md = {4}>
                         <Form.Label 
-                            className="plastic-bags" htmlFor="inlineFormCustomSelectPref">
+                            className="plastic-bags" className= "plastic" htmlFor="inlineFormCustomSelectPref">
             Plastic Bags
                         </Form.Label>
                         <Form.Control
@@ -82,7 +82,7 @@ const Calculator = (props) => {
                 </Form.Row>
                 <Form.Row className="justify-content-md-center">
                     <Col md = {4}>
-                        <Form.Label className="coffee-cup" htmlFor="inlineFormCustomSelectPref">
+                        <Form.Label className="coffee-cup" className= "plastic" htmlFor="inlineFormCustomSelectPref">
             Coffee Cup
                             </Form.Label>
                             <Form.Control
@@ -106,7 +106,7 @@ const Calculator = (props) => {
                 </Form.Row>
                 <Form.Row className="justify-content-md-center">
                     <Col md = {4}>
-                        <Form.Label className="plastic-straw" htmlFor="inlineFormCustomSelectPref">
+                        <Form.Label className="plastic-straw" className= "plastic" htmlFor="inlineFormCustomSelectPref">
             Plastic Straw
                             </Form.Label>
                             <Form.Control
@@ -130,7 +130,7 @@ const Calculator = (props) => {
                 </Form.Row>
                 <Form.Row className="justify-content-md-center">
                     <Col md = {4}>
-                        <Form.Label className="6-pack-plastic-rings" htmlFor="inlineFormCustomSelectPref">
+                        <Form.Label className="6-pack-plastic-rings" className= "plastic" htmlFor="inlineFormCustomSelectPref">
             6-pack Plastic Rings
                             </Form.Label>
                             <Form.Control
@@ -154,7 +154,7 @@ const Calculator = (props) => {
                 </Form.Row>
                 <Form.Row className="justify-content-md-center">
                     <Col md = {4}>
-                        <Form.Label className="plastic-water-bottle" htmlFor="inlineFormCustomSelectPref">
+                        <Form.Label className="plastic-water-bottle" className= "plastic" htmlFor="inlineFormCustomSelectPref">
             Plastic Water Bottle
                             </Form.Label>
                             <Form.Control
@@ -178,7 +178,7 @@ const Calculator = (props) => {
                 </Form.Row>
                 <Form.Row className="justify-content-md-center">
                     <Col md = {4}>
-                        <Form.Label className="coffee-pod" htmlFor="inlineFormCustomSelectPref">
+                        <Form.Label className="coffee-pod" className= "plastic" htmlFor="inlineFormCustomSelectPref">
             Coffee Pod
                             </Form.Label>
                             <Form.Control
@@ -202,7 +202,7 @@ const Calculator = (props) => {
                 </Form.Row>
                 <Form.Row className="justify-content-md-center">
                     <Col md = {4}>
-                        <Form.Label className="plastic-cup" htmlFor="inlineFormCustomSelectPref">
+                        <Form.Label className="plastic-cup" className= "plastic" htmlFor="inlineFormCustomSelectPref">
             Plastic Cup
                             </Form.Label>
                             <Form.Control
@@ -226,7 +226,7 @@ const Calculator = (props) => {
                 </Form.Row>
                 <Form.Row className="justify-content-md-center">
                     <Col md = {4}>
-                        <Form.Label className="disposable-diaper" 
+                        <Form.Label className="disposable-diaper" className= "plastic" 
                         htmlFor="inlineFormCustomSelectPref">
             Disposable Diaper
                             </Form.Label>
@@ -251,7 +251,7 @@ const Calculator = (props) => {
                 </Form.Row>
                 <Form.Row className="justify-content-md-center">
                     <Col md = {4}>
-                        <Form.Label className="plastic-toothbrush" htmlFor="inlineFormCustomSelectPref">
+                        <Form.Label className="plastic-toothbrush" className= "plastic" htmlFor="inlineFormCustomSelectPref">
             Plastic Toothbrush
                             </Form.Label>
                             <Form.Control
