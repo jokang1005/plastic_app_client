@@ -8,7 +8,7 @@ import Nav from 'react-bootstrap/Nav'
 
 const Header = (props) => {
     const {gState, setGState} = React.useContext(GlobalCtx)
-
+//shows logout if logged in
     const logout = (
         <Nav.Link>
             <h2 onClick = {() => {
