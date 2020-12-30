@@ -29,7 +29,7 @@ const Show = (props) => {
             <Header />
             {console.log(plastics)}
             {plastics ? 
-            <Table striped bordered hover variant="dark">
+            <Table className="color" striped bordered hover variant="dark">
                 <thead>
                     <tr>
                     <th>Timestamp</th>
